@@ -12,6 +12,7 @@ network recon, log analysis, threat detection, and security reporting.
 | 3 | **Password Auditor** | Entropy, hash analysis, crack-time estimation, secure generation | `python password_auditor.py` |
 | 4 | **Real-Time Port Monitor / IDS** | Network monitoring, anomaly detection, real-time alerting | `python port_monitor.py` |
 | 5 | **SOC Threat Dashboard** | Threat intel aggregation, IP enrichment, SOC visualization | `python threat_dashboard.py` |
+| 6 | **Hash Identifier** | Hash fingerprinting, prefix/length detection, algorithm identification | `python hash_id.py <hash>` |
 
 ## Quick Start
 
@@ -21,20 +22,22 @@ cd cybersecurity-portfolio
 
 # No pip install needed — standard library only
 # Run any project:
-cd 1_network_scanner && python network_scanner.py
-cd 2_log_analyzer    && python log_analyzer.py
+cd 1_network_scanner  && python network_scanner.py
+cd 2_log_analyzer     && python log_analyzer.py
 cd 3_password_auditor && python password_auditor.py
-cd 4_port_monitor    && python port_monitor.py
+cd 4_port_monitor     && python port_monitor.py
 cd 5_threat_dashboard && python threat_dashboard.py
+cd 6_hash_identifier  && python hash_id.py <hash>
 ```
 
 ## How they connect
 
 ```
-1_network_scanner  → scan_results.json  ─┐
-2_log_analyzer     → findings.json      ─┤→ 5_threat_dashboard → soc_dashboard.html
-3_password_auditor → password_audit.json─┤
-4_port_monitor     → ids_alerts.json    ─┘
+1_network_scanner  → scan_results.json   ─┐
+2_log_analyzer     → findings.json       ─┤→ 5_threat_dashboard → soc_dashboard.html
+3_password_auditor → password_audit.json ─┤
+4_port_monitor     → ids_alerts.json     ─┘
+6_hash_identifier  → pairs with 3_password_auditor (identify a hash before auditing/cracking it)
 ```
 
 Run tools 1–4 first, then run tool 5 to see the unified SOC dashboard.
@@ -48,6 +51,7 @@ Run tools 1–4 first, then run tool 5 to see the unified SOC dashboard.
 - Real-time intrusion detection
 - Threat intelligence enrichment
 - SOC dashboard & reporting
+- Hash fingerprinting & algorithm identification
 
 ## Legal notice
 
