@@ -48,7 +48,19 @@ cd 9_metadata_scrubber && python metadata_scrubber.py photo.jpg --read-only
 7_caesar_cipher     → intro to encryption concepts (pairs with cryptography learning)
 9_metadata_scrubber → privacy hardening (pairs with recon/OSINT awareness)
 ```
+## Portfolio Highlights
 
+✔ Built 9 cybersecurity tools in Python
+
+✔ Simulated SOC analyst workflows
+
+✔ Automated threat detection and reporting
+
+✔ Implemented network reconnaissance and monitoring
+
+✔ Developed security-focused data analysis tools
+
+✔ Practiced defensive security concepts and incident investigation
 ## Skills Demonstrated
 
 - Network reconnaissance & port scanning
