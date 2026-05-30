@@ -16,6 +16,7 @@ network recon, log analysis, threat detection, cryptography, and security report
 | 7 | **Caesar Cipher CLI** | Substitution cipher, brute-force, frequency analysis | `python caesar_cipher.py` |
 | 8 | **Educational Keylogger** | Keyboard event capture, threading, defensive awareness | `python keylogger.py` |
 | 9 | **Metadata Scrubber** | EXIF removal, privacy protection, image processing | `python metadata_scrubber.py` |
+| 10 | **Malware Analysis Report** | Static analysis, PE inspection, IOC extraction, threat reporting | See report |
 
 ## Quick Start
 
