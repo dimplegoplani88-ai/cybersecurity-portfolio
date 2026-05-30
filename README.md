@@ -1,64 +1,79 @@
-# 🛡 Cybersecurity Portfolio — Dimple Goplani
+# Caesar Cipher CLI Tool
 
-A collection of 5 Python cybersecurity tools demonstrating SOC analyst skills:
-network recon, log analysis, threat detection, and security reporting.
+A command-line tool to **encrypt**, **decrypt**, and **crack** Caesar cipher messages — including brute-force and frequency analysis.
 
-## Projects
+## What is a Caesar Cipher?
 
-| # | Project | Skills | Run |
-|---|---------|--------|-----|
-| 1 | **Network Scanner** | Socket programming, threading, banner grabbing, risk assessment | `python network_scanner.py` |
-| 2 | **Log Analyzer & Threat Detector** | Log parsing, regex, brute-force/SQLi/traversal detection, HTML report | `python log_analyzer.py` |
-| 3 | **Password Auditor** | Entropy, hash analysis, crack-time estimation, secure generation | `python password_auditor.py` |
-| 4 | **Real-Time Port Monitor / IDS** | Network monitoring, anomaly detection, real-time alerting | `python port_monitor.py` |
-| 5 | **SOC Threat Dashboard** | Threat intel aggregation, IP enrichment, SOC visualization | `python threat_dashboard.py` |
-| 6 | **Hash Identifier** | Hash fingerprinting, prefix/length detection, algorithm identification | `python hash_id.py <hash>` |
+The Caesar cipher is one of the oldest known encryption techniques. Each letter in the plaintext is shifted a fixed number of positions down the alphabet. For example, with shift 3:
 
-## Quick Start
+```
+A → D
+B → E
+Hello → Khoor
+```
+
+Named after Julius Caesar, who reportedly used it with a shift of 3 to protect military communications. It's trivially broken today — which is exactly why it's a great learning tool.
+
+## Features
+
+- Encrypt any text with a custom shift (1–25)
+- Decrypt with known shift
+- Brute-force all 25 possible shifts
+- Frequency analysis to auto-guess the shift (works well on longer texts)
+- Preserves punctuation, numbers, and spaces
+- No external dependencies — pure Python stdlib
+
+## Requirements
+
+- Python 3.6+
+
+## Usage
+
+### Encrypt
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/cybersecurity-portfolio
-cd cybersecurity-portfolio
-
-# No pip install needed — standard library only
-# Run any project:
-cd 1_network_scanner  && python network_scanner.py
-cd 2_log_analyzer     && python log_analyzer.py
-cd 3_password_auditor && python password_auditor.py
-cd 4_port_monitor     && python port_monitor.py
-cd 5_threat_dashboard && python threat_dashboard.py
-cd 6_hash_identifier  && python hash_id.py <hash>
+python caesar_cipher.py encrypt "Hello World" -s 13
 ```
 
-## How they connect
-
+Output:
 ```
-1_network_scanner  → scan_results.json   ─┐
-2_log_analyzer     → findings.json       ─┤→ 5_threat_dashboard → soc_dashboard.html
-3_password_auditor → password_audit.json ─┤
-4_port_monitor     → ids_alerts.json     ─┘
-6_hash_identifier  → pairs with 3_password_auditor (identify a hash before auditing/cracking it)
+[+] Plaintext:  Hello World
+[+] Shift:      13
+[+] Ciphertext: Uryyb Jbeyq
 ```
 
-Run tools 1–4 first, then run tool 5 to see the unified SOC dashboard.
+### Decrypt
 
-## Skills demonstrated
+```bash
+python caesar_cipher.py decrypt "Uryyb Jbeyq" -s 13
+```
 
-- Network reconnaissance & port scanning
-- Log analysis (SSH auth, Apache/Nginx)
-- Threat detection (brute force, SQLi, traversal, port scan, suspicious ports)
-- Password security & cryptography
-- Real-time intrusion detection
-- Threat intelligence enrichment
-- SOC dashboard & reporting
-- Hash fingerprinting & algorithm identification
+### Brute-Force (all 25 shifts)
 
-## Legal notice
+```bash
+python caesar_cipher.py crack "Uryyb Jbeyq"
+```
 
-> These tools are for **authorized use only**. Only scan networks and systems
-> you own or have explicit written permission to test.
+### Auto-detect shift via Frequency Analysis
 
-## Author
+```bash
+python caesar_cipher.py crack "Khoor Zruog" --auto
+```
 
-**Dimple Goplani** | [LinkedIn](https://www.linkedin.com/in/dimplegoplani-61a9b3315)
-BCA – Computational Science | Cygnet.One Data Engineer (2024–2025)
+> Frequency analysis works best on longer texts. Short phrases may produce incorrect guesses.
+
+## What You'll Learn
+
+- How substitution ciphers work
+- Why Caesar cipher is insecure (key space = 25)
+- Brute-force attack fundamentals
+- English letter frequency analysis (`E` is most common at ~12.7%)
+- Python `argparse` for CLI tools
+
+## Why Caesar Cipher is Broken
+
+Only 25 possible keys exist. Any attacker can try all of them in milliseconds. It also preserves letter frequency — cryptanalysts can match frequency patterns against known English distributions to crack it without trying every key.
+
+## Disclaimer
+
+For educational purposes only. Do not use Caesar cipher for any real security application.

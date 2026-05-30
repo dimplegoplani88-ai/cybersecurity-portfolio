@@ -1,8 +1,2 @@
-# No third-party packages required for core functionality.
-# All projects use Python standard library only.
-# Python 3.10+ recommended (uses match statements and dict | None syntax)
-
-# Optional: install these for extended features
-# requests          # for real AbuseIPDB / VirusTotal API calls in project 5
-# python-whois      # for WHOIS lookups
-# scapy             # for raw packet capture (advanced version of project 4)
+Pillow>=9.0.0
+piexif>=1.1.3
