@@ -1,1 +1,3 @@
-# No external dependencies required — standard library only
+pynput
+Pillow
+piexif
