@@ -11,3 +11,9 @@ Thumbs.db
 *.log
 venv/
 .venv/
+.claude/ 
+.claude-flow/ 
+.swarm/ 
+CLAUDE.md 
+*.db 
+mnt/ 
