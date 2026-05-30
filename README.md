@@ -83,4 +83,4 @@ cd 9_metadata_scrubber && python metadata_scrubber.py photo.jpg --read-only
 ## Author
 
 **Dimple Goplani** | [LinkedIn](https://www.linkedin.com/in/dimplegoplani-61a9b3315)
-BCA – Computational Science | Cygnet.One Data Engineer (2024–2025)
+BCA – Computational Science | MSc Cybersecurity – Kaushalya The Skill University (in progress) | Cygnet.One Data Engineer (2024–2025)
