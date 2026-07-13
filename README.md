@@ -24,7 +24,7 @@ cd cybersecurity-portfolio
 pip install -r requirements.txt
 
 # Run any project:
-cd 1_malware_analysis  && start Malware_Analysis_Report_Dimple_Goplani_.docx
+cd 1_malware_analysis  && start Malware_Analysis_Report_Dimple_Goplani_.docx   :: Mac/Linux: use 'open' instead of 'start'
 cd 2_log_analyzer      && python log_analyzer.py
 cd 3_network_scanner   && python network_scanner.py
 cd 4_port_monitor      && python port_monitor.py
