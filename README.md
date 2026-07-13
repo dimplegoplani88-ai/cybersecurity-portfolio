@@ -7,7 +7,7 @@ malware analysis, log/threat detection, network recon, and security reporting.
 
 | # | Project | Skills | Run |
 |---|---------|--------|-----|
-| 1 | **Malware Analysis Report** | Static analysis, PE inspection, IOC extraction, threat reporting | See report |
+| 1 | **Malware Analysis Report** | Static analysis, PE inspection, IOC extraction, threat reporting | Open .docx in `1_malware_analysis/` |
 | 2 | **Log Analyzer & Threat Detector** | Log parsing, regex, brute-force/SQLi/traversal detection, HTML report | `python log_analyzer.py` |
 | 3 | **Network Scanner** | Socket programming, threading, banner grabbing, risk assessment | `python network_scanner.py` |
 | 4 | **Real-Time Port Monitor / IDS** | Network monitoring, anomaly detection, real-time alerting | `python port_monitor.py` |
@@ -24,7 +24,7 @@ cd cybersecurity-portfolio
 pip install -r requirements.txt
 
 # Run any project:
-cd 1_malware_analysis  && start Malware_Analysis_Report_Dimple_Goplani_.docx   :: Mac/Linux: use 'open' instead of 'start'
+cd 1_malware_analysis  && start Malware_Analysis_Report_Dimple_Goplani_.docx   # Windows only — Mac/Linux: use 'open' instead of 'start'
 cd 2_log_analyzer      && python log_analyzer.py
 cd 3_network_scanner   && python network_scanner.py
 cd 4_port_monitor      && python port_monitor.py
