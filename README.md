@@ -1,68 +1,42 @@
-# 🛡 Cybersecurity Portfolio — Dimple Goplani
+# 🛡 Malware Analysis Report — Dimple Goplani
 
-A collection of **8 Python cybersecurity projects** demonstrating SOC analyst skills:
-malware analysis, log/threat detection, network recon, and security reporting.
+Static analysis of a dual-threat malware sample (PCLocked Ransomware + RustyStealer Infostealer) obtained from MalwareBazaar.
 
-## Projects
+## Sample
 
-| # | Project | Skills | Run |
-|---|---------|--------|-----|
-| 1 | **Malware Analysis Report** | Static analysis, PE inspection, IOC extraction, threat reporting | Open .docx in `1_malware_analysis/` |
-| 2 | **Log Analyzer & Threat Detector** | Log parsing, regex, brute-force/SQLi/traversal detection, HTML report | `python log_analyzer.py` |
-| 3 | **Network Scanner** | Socket programming, threading, banner grabbing, risk assessment | `python network_scanner.py` |
-| 4 | **Real-Time Port Monitor / IDS** | Network monitoring, anomaly detection, real-time alerting | `python port_monitor.py` |
-| 5 | **SOC Threat Dashboard** | Threat intel aggregation, IP enrichment, SOC visualization | `python threat_dashboard.py` |
-| 6 | **Password Auditor** | Entropy, hash analysis, crack-time estimation, secure generation | `python password_auditor.py` |
-| 7 | **Hash Identifier** | Hash fingerprinting, prefix/length detection, algorithm identification | `python hash_id.py <hash>` |
-| 8 | **Metadata Scrubber** | EXIF removal, privacy protection, image processing | `python metadata_scrubber.py` |
+- **SHA256:** 21f006b546a50facaa16a666836fd7121eb00d018e9d2e04656d78e597b4db6d
+- **Type:** PE32+ Executable (64-bit)
+- **Threat:** PCLocked Ransomware + RustyStealer Infostealer
+- **VirusTotal:** 46/71 engines
 
-## Quick Start
+## Analysis Performed
 
-```bash
-git clone https://github.com/dimplegoplani88-ai/cybersecurity-portfolio
-cd cybersecurity-portfolio
-pip install -r requirements.txt
+- PE header inspection (PEStudio, CFF Explorer, DIE)
+- String extraction and API import analysis
+- Packer/obfuscation detection (entropy > 6.5)
+- IOC extraction (file, network, host-based)
+- Behavioral analysis via Any.run sandbox + VirusTotal intelligence
 
-# Run any project:
-cd 1_malware_analysis  && start Malware_Analysis_Report_Dimple_Goplani_.docx   # Windows only — Mac/Linux: use 'open' instead of 'start'
-cd 2_log_analyzer      && python log_analyzer.py
-cd 3_network_scanner   && python network_scanner.py
-cd 4_port_monitor      && python port_monitor.py
-cd 5_threat_dashboard  && python threat_dashboard.py
-cd 6_password_auditor  && python password_auditor.py
-cd 7_hash_identifier   && python hash_id.py <hash>
-cd 8_metadata_scrubber && python metadata_scrubber.py photo.jpg --read-only
-```
+## Key Findings
 
-## Portfolio Highlights
-
-✔ Conducted static malware analysis on a real dual-threat sample (ransomware + infostealer)
-
-✔ Built 7 supporting Python security tools simulating SOC analyst workflows
-
-✔ Automated threat detection and reporting
-
-✔ Implemented network reconnaissance and monitoring
-
-✔ Practiced defensive security concepts and incident investigation
+- Packed/obfuscated binary with timestamp stomping
+- File encryption + credential theft (dual threat)
+- C2 communication over HTTPS to 185.225.19.12 and 91.214.44.67
+- Shadow copy deletion to prevent recovery
+- Browser data targeting (Chrome, Firefox, Edge, Brave)
 
 ## Skills Demonstrated
 
-- Malware analysis, PE inspection, IOC extraction
-- Network reconnaissance & port scanning
-- Log analysis (SSH auth, Apache/Nginx)
-- Threat detection (brute force, SQLi, traversal, port scan)
-- Password security & cryptography
-- Real-time intrusion detection
-- Threat intelligence enrichment
-- SOC dashboard & reporting
-- Hash fingerprinting & algorithm identification
-- Privacy metadata removal & image forensics
+`Malware analysis` · `PE inspection` · `IOC extraction` · `Threat reporting` · `Static analysis`
+
+## Report
+
+Full write-up: [`malware_analysis/Malware_Analysis_Report_Dimple_Goplani_.docx`](malware_analysis/Malware_Analysis_Report_Dimple_Goplani_.docx)
 
 ## Legal Notice
 
-> These tools are for **authorized use only**. Only scan networks and systems
-> you own or have explicit written permission to test. Unauthorized use is illegal.
+> This analysis was performed on a sample obtained from a public malware repository for
+> research and educational purposes only, in an isolated/sandboxed environment.
 
 ## Author
 
